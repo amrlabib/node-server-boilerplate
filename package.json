@@ -4,7 +4,7 @@
   "description": "Node server boilerplate",
   "main": "index.js",
   "scripts": {
-    "start" : "node index.js",
+    "start": "node_modules/.bin/nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
@@ -17,5 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.2"
+  },
+  "devDependencies": {
+    "nodemon": "^1.15.1"
   }
 }
