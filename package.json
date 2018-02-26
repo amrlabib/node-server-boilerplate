@@ -16,13 +16,16 @@
   "author": "Amr Labib",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.16.2",
-    "debug": "^3.1.0"
+    "body-parser": "^1.18.2",
+    "debug": "^3.1.0",
+    "express": "^4.16.2"
   },
   "devDependencies": {
     "nodemon": "^1.15.1"
   },
   "nodemonConfig": {
-    "ignore": ["node_modules/*"]
+    "ignore": [
+      "node_modules/*"
+    ]
   }
 }
