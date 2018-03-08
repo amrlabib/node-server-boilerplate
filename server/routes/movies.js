@@ -6,7 +6,8 @@ module.exports = function(app) {
 
     //Get all Movies
     app.get(`${apiUrl}/movies`, (req, res) => {
-        Movies.all()
+        const query = req.query;
+        Movies.all(query)
             .then((data) => {
                 Request.sendResponse(res, data);
             })
@@ -66,4 +67,5 @@ module.exports = function(app) {
                 Request.sendResponse(res, {}, error);
             });
     });
+
 }

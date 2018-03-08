@@ -2,9 +2,13 @@ const Request = require('../services/request');
 const MOVIES_API = 'http://localhost:3001/movies';
 
 class Movies {
-	static async all() {
+	static async all(query) {
 		const url = MOVIES_API;
-		const result = await Request.get(url);	
+		let result = await Request.get(url);	
+
+		if(query) {
+			result = result.filter((item) => item.name.indexOf(query.search || query.filter) > -1);
+		}
 
 		return result;
 	}
