@@ -1,8 +1,8 @@
 const axios = require('axios');
 const Log = require('./log.js');
 
-module.exports = {
-    request: (url, method, reqHeaders, reqBody) => {
+class Request {
+    static request(url, method, reqHeaders, reqBody) {
         const headers = {
             'content-type': 'application/json',
             ...reqHeaders,
@@ -45,17 +45,21 @@ module.exports = {
                 Log.error(responseError);
                 return Promise.reject(responseError);
             });
-    },
-    get: function(url, reqHeader) {
-        return this.request(url, 'GET', reqHeader);
-    },
-    post: function(url, reqHeader, reqBody) {
-        return this.request(url, 'POST', reqHeader, reqBody);
-    },
-    put: function(url, reqHeader, reqBody) {
-        return this.request(url, 'PUT', reqHeader, reqBody);
-    },
-    sendResponse: (res, data, error) => {
+    }
+
+    static get(url, reqHeader) {
+        return Request.request(url, 'GET', reqHeader);
+    }
+
+    static post(url, reqHeader, reqBody) {
+        return Request.request(url, 'POST', reqHeader, reqBody);
+    }
+
+    static put(url, reqHeader, reqBody) {
+        return Request.request(url, 'PUT', reqHeader, reqBody);
+    }
+
+    static sendResponse(res, data, error){
         const finalResponse = {
             status: 'success',
             message: '',
@@ -67,9 +71,11 @@ module.exports = {
             finalResponse.message = error.message;
             res.status(error.code).send(finalResponse);
         } else {
-        	Log.success(finalResponse);
+            Log.success(finalResponse);
             res.send(finalResponse);
         }
     }
 
 }
+
+module.exports = Request;
