@@ -14,8 +14,8 @@ app.use( (req,res,next) => {
 	debug(`Request url: ${req.url}`);
 	debug(`Request query: ${JSON.stringify(req.query)}`);
 	debug(`Request body: ${JSON.stringify(req.body)}`);
-	debug('------------------------------------');
 	next();
+	debug('------------------------------------');
 });
 
 

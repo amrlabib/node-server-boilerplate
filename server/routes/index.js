@@ -6,11 +6,10 @@ module.exports = (app) => {
 
 		request.get(url)
 		.then((data) => {
-			console.log(data);
-			res.send(data);
+			request.sendResponse(res, data);
 		})
 		.catch((error) => {
-			res.send(error);
+			request.sendResponse(res, {} , error);
 		});
 	});
 }
