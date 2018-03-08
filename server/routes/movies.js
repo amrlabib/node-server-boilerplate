@@ -1,4 +1,4 @@
-const Request = require('../services/request.js');
+const Request = require('../services/request');
 const Movies = require('../controllers/Movies');
 const apiUrl = require('../config').api;
 
