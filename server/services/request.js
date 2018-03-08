@@ -2,15 +2,10 @@ const axios = require('axios');
 const Log = require('./log.js');
 
 class Request {
-    static request(url, method, reqHeaders, reqBody) {
+    static request(url, method, reqHeaders, data) {
         const headers = {
             'content-type': 'application/json',
             ...reqHeaders,
-        }
-
-        let data = {};
-        if (method == 'POST' || method == 'PUT') {
-            data = reqBody;
         }
 
         const reqObj = {
@@ -20,6 +15,7 @@ class Request {
             data,
         };
 
+        Log.data("Sending Request to with data:");
         Log.data(reqObj);
         return axios(reqObj)
             .then((res) => {
@@ -42,7 +38,6 @@ class Request {
                         responseError.message = error.message;
                     }
                 }
-                Log.error(responseError);
                 return Promise.reject(responseError);
             });
     }
@@ -51,11 +46,11 @@ class Request {
         return Request.request(url, 'GET', reqHeader);
     }
 
-    static post(url, reqHeader, reqBody) {
+    static post(url, reqBody, reqHeader) {
         return Request.request(url, 'POST', reqHeader, reqBody);
     }
 
-    static put(url, reqHeader, reqBody) {
+    static put(url, reqBody, reqHeader) {
         return Request.request(url, 'PUT', reqHeader, reqBody);
     }
 
@@ -63,7 +58,7 @@ class Request {
         return Request.request(url, 'DELETE', reqHeader);
     }
 
-    static sendResponse(res, data, error){
+    static sendResponse(res, data, error) {
         const finalResponse = {
             status: 'success',
             message: '',
@@ -73,7 +68,8 @@ class Request {
         if (error) {
             finalResponse.status = 'error';
             finalResponse.message = error.message;
-            res.status(error.code).send(finalResponse);
+            Log.error(error);
+            res.status(error.code || 500).send(finalResponse);
         } else {
             Log.success(finalResponse);
             res.send(finalResponse);

@@ -1,23 +1,24 @@
 {
-    "users": [
+  "movies": [
     {
-        "id": 1,
-        "name": "Amr",
-        "email": "amr@am.com"
+      "name": "Inception",
+      "Actor": "Leonardo Dicaprio",
+      "id": 1
     },
     {
-        "id": 2,
-        "name": "Mohammed",
-        "email": "Mohammed@mo.com"
-    }],
-    "comments": [
-    {
-        "id": 1,
-        "body": "some comment",
-        "postId": 1
-    }],
-    "profile":
-    {
-        "name": "typicode"
+      "name": "Mission impossible 1",
+      "Actor": "Tom Cruise",
+      "id": 2
     }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
 }

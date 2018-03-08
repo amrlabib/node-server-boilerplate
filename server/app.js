@@ -14,7 +14,6 @@ app.use( (req,res,next) => {
 	Log.data(`Request url: ${req.url}`);
 	Log.data(`Request query: ${JSON.stringify(req.query)}`);
 	Log.data(`Request body: ${JSON.stringify(req.body)}`);
-	Log.data('------------------------------------');
 	next();
 });
 
