@@ -1,0 +1,23 @@
+{
+    "users": [
+    {
+        "id": 1,
+        "name": "Amr",
+        "email": "amr@am.com"
+    },
+    {
+        "id": 2,
+        "name": "Mohammed",
+        "email": "Mohammed@mo.com"
+    }],
+    "comments": [
+    {
+        "id": 1,
+        "body": "some comment",
+        "postId": 1
+    }],
+    "profile":
+    {
+        "name": "typicode"
+    }
+}

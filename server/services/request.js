@@ -59,6 +59,10 @@ class Request {
         return Request.request(url, 'PUT', reqHeader, reqBody);
     }
 
+    static delete(url, reqHeader) {
+        return Request.request(url, 'DELETE', reqHeader);
+    }
+
     static sendResponse(res, data, error){
         const finalResponse = {
             status: 'success',
