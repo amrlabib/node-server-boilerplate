@@ -15,16 +15,19 @@ class Request {
             data,
         };
 
-        Log.data("Sending Request to with data:");
+        Log.data("Sending Request with data:");
         Log.data(reqObj);
+
         return axios(reqObj)
             .then((res) => {
+            	//Apply any data global data formatting here
                 return Promise.resolve(res.data);
             })
             .catch((error) => {
                 const responseError = new Error();
-                error.code = 500;
+                responseError.code = 500;
                 responseError.message = 'Something went wrong!';
+
                 if (error.response) {
                     const errMessage = error.response.data.message;
                     responseError.code = error.response.status;
@@ -68,7 +71,6 @@ class Request {
         if (error) {
             finalResponse.status = 'error';
             finalResponse.message = error.message;
-            Log.error(error);
             res.status(error.code || 500).send(finalResponse);
         } else {
             Log.success(finalResponse);
