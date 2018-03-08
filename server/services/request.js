@@ -2,7 +2,7 @@ const axios = require('axios');
 const Log = require('./log.js');
 
 class Request {
-    static request(url, method, reqHeaders, data) {
+    static call(url, method, reqHeaders, data) {
         const headers = {
             'content-type': 'application/json',
             ...reqHeaders,
@@ -43,19 +43,19 @@ class Request {
     }
 
     static get(url, reqHeader) {
-        return Request.request(url, 'GET', reqHeader);
+        return Request.call(url, 'GET', reqHeader);
     }
 
     static post(url, reqBody, reqHeader) {
-        return Request.request(url, 'POST', reqHeader, reqBody);
+        return Request.call(url, 'POST', reqHeader, reqBody);
     }
 
     static put(url, reqBody, reqHeader) {
-        return Request.request(url, 'PUT', reqHeader, reqBody);
+        return Request.call(url, 'PUT', reqHeader, reqBody);
     }
 
     static delete(url, reqHeader) {
-        return Request.request(url, 'DELETE', reqHeader);
+        return Request.call(url, 'DELETE', reqHeader);
     }
 
     static sendResponse(res, data, error) {
