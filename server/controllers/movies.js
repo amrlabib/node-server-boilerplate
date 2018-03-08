@@ -6,8 +6,9 @@ class Movies {
 		const url = MOVIES_API;
 		let result = await Request.get(url);	
 
-		if(query) {
-			result = result.filter((item) => item.name.indexOf(query.search || query.filter) > -1);
+		const filter = query.search || query.filter;
+		if(filter) {
+			result = result.filter((item) => item.name.indexOf(filter) > -1);
 		}
 
 		return result;
