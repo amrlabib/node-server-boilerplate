@@ -1,10 +1,11 @@
 const axios = require('axios');
 const Log = require('./log.js');
+const config = require('../config');
 
 class Request {
     static call(url, method, reqHeaders, data) {
         const headers = {
-            'content-type': 'application/json',
+            ...config.requestHeaders,
             ...reqHeaders,
         }
 

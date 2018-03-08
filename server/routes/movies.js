@@ -29,7 +29,7 @@ module.exports = function(app) {
             });
     });
 
-    //Post movie
+    //Add movie
     app.post(`${apiUrl}/movies/`, (req, res) => {
         const movie = req.body;
         Movies.add(movie)
