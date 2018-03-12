@@ -4,6 +4,10 @@ const bodyParser = require('body-parser');
 const config = require('./config');
 const Log = require('./services/log');
 
+
+require('./config/db.js');
+
+
 app.use(bodyParser.json());
 
 const setDefaultResponseHeaders = function(res) {  
