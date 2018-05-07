@@ -1,4 +1,4 @@
-# node-server-boilerplate
+# Node server boilerplate
 Node server boilerplate is to help you kick start your node server.
 
 ## Prerequisite:
