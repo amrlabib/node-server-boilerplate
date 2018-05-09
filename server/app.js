@@ -8,7 +8,6 @@ const Log = require('./services/log');
 
 require('./config/db.js');
 
-
 app.use(bodyParser.json());
 
 function setDefaultResponseHeaders(res) {
