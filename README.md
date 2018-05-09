@@ -1,2 +1,26 @@
-# node-server
-Node server boilerplate
+# Node server boilerplate
+Node server boilerplate is to help you kick start your node server.
+
+## Prerequisite:
+
+* [yarn](https://yarnpkg.com/en/) or [npm](https://www.npmjs.com/)
+* [Node.js](https://nodejs.org/en/)
+
+## Setup:
+
+1. `yarn` or `npm install`
+3. `yarn start:dev` to start server 
+4. `yarn json-server` to create test json api `http://localhost:3001/`
+
+---
+
+
+## Features: 
+
+1. [axios](https://github.com/axios/axios) to handle all third party api calls if required `['GET','POST','PUT','DELETE', ...]`
+2. [express](https://expressjs.com/) web application framework
+3. [json-server](https://github.com/typicode/json-server) no need to wait for third party api to start development, use `json-server` to have test data and test third party api ready for use
+4. [nodemon](https://github.com/remy/nodemon) to restart server on any file change during development
+5. [mongoose](https://github.com/Automattic/mongoose) is a MongoDB object modeling tool designed to work in an asynchronous environment.
+
+
