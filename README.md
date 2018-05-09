@@ -22,5 +22,8 @@ Node server boilerplate is to help you kick start your node server.
 3. [json-server](https://github.com/typicode/json-server) no need to wait for third party api to start development, use `json-server` to have test data and test third party api ready for use
 4. [nodemon](https://github.com/remy/nodemon) to restart server on any file change during development
 5. [mongoose](https://github.com/Automattic/mongoose) is a MongoDB object modeling tool designed to work in an asynchronous environment.
+6. [eslint](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) the project contains eslint with `eslint-config-airbnb-base` extended, to fix and flag javascript code errors.
+
+
 
 
