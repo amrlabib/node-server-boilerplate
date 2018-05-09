@@ -1,4 +1,5 @@
-module.exports = function(app){
-	require('./movies.js')(app);
-}
+import { MoviesRoutes } from './movies';
 
+module.exports = function routes(app) {
+  MoviesRoutes(app);
+};
