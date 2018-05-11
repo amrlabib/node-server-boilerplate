@@ -14,7 +14,6 @@ Node server boilerplate is to help you kick start your node server.
 
 ---
 
-
 ## Features: 
 
 1. [axios](https://github.com/axios/axios) to handle all third party api calls if required `['GET','POST','PUT','DELETE', ...]`
@@ -26,6 +25,14 @@ Node server boilerplate is to help you kick start your node server.
 7. [flow](https://flow.org/en/) static type checker for javascript
 8. [husky](https://github.com/typicode/husky) to add `pre-commit` hook that will trigger `yarn lint` && `yarn flow` to make sure no bad commits are pushed
 
+---
 
+## Editor recommendation:
+
+You can use any prefered editor, in case you are using [Atom](https://atom.io/) the following packages can help speed up your development process:
+
+* [react](https://atom.io/packages/react)
+* [linter-eslint](https://atom.io/packages/linter-eslint)
+* [flow-ide](https://atom.io/packages/flow-ide)
 
 
