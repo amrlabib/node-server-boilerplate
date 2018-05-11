@@ -1,9 +1,11 @@
+// @flow
+
 const axios = require('axios');
 const Log = require('./log.js');
 const config = require('../config');
 
 class Request {
-  static call(url, method, reqHeaders, data) {
+  static call(url: string, method: string, reqHeaders?: Object, data?: Object) {
     const headers = {
       ...config.requestHeaders,
       ...reqHeaders,
@@ -24,7 +26,7 @@ class Request {
         // Apply any data global data formatting here
         Promise.resolve(res.data))
       .catch((error) => {
-        const responseError = new Error();
+        const responseError = {};
         responseError.code = 500;
         responseError.message = 'Something went wrong';
 
@@ -43,23 +45,23 @@ class Request {
       });
   }
 
-  static get(url, reqHeader) {
+  static get(url: string, reqHeader?: Object) {
     return Request.call(url, 'GET', reqHeader);
   }
 
-  static post(url, reqBody, reqHeader) {
+  static post(url: string, reqBody: Object, reqHeader?: Object) {
     return Request.call(url, 'POST', reqHeader, reqBody);
   }
 
-  static put(url, reqBody, reqHeader) {
+  static put(url: string, reqBody: Object, reqHeader?: Object) {
     return Request.call(url, 'PUT', reqHeader, reqBody);
   }
 
-  static delete(url, reqHeader) {
+  static delete(url: string, reqHeader?: Object) {
     return Request.call(url, 'DELETE', reqHeader);
   }
 
-  static sendResponse(res, data, error) {
+  static sendResponse(res: Object, data: Object, error?: Object) {
     const finalResponse = {
       status: 'success',
       message: '',
