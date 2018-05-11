@@ -6,8 +6,9 @@
   "scripts": {
     "build": "yarn run flow-remove-types server/ -- -d dist/ --pretty",
     "build:watch": "chokidar 'server/**/*.js' -c 'yarn run build'",
-    "start": "node index.js",
-    "start:watch": "yarn build:watch && DEBUG=server node_modules/.bin/nodemon index.js --ignore test-db.json",
+    "server": "node index.js",
+    "server:watch": "DEBUG=server node_modules/.bin/nodemon index.js --ignore test-db.json",
+    "start": "concurrently \"yarn build:watch\" \"yarn server:watch\"",
     "json-server": "json-server --watch test-db.json --port 3001",
     "lint": "node_modules/.bin/eslint ./server --fix",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -36,6 +37,8 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
+    "chokidar-cli": "^1.2.0",
+    "concurrently": "^3.5.1",
     "eslint": "^4.19.1",
     "eslint-config-airbnb-base": "^12.1.0",
     "eslint-plugin-flowtype": "^2.46.3",
@@ -49,6 +52,7 @@
   "nodemonConfig": {
     "ignore": [
       "node_modules/*"
-    ]
+    ],
+    "delay": "500"
   }
 }

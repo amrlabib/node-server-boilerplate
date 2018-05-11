@@ -26,7 +26,7 @@ class Request {
       .catch((error) => {
         const responseError = new Error();
         responseError.code = 500;
-        responseError.message = 'Something went wrong!';
+        responseError.message = 'Something went wrong';
 
         if (error.response) {
           const errMessage = error.response.data.message;
