@@ -9,7 +9,7 @@ Node server boilerplate is to help you kick start your node server.
 ## Setup:
 
 1. `yarn` or `npm install`
-3. `yarn start:dev` to start server 
+3. `yarn start` to start server 
 4. `yarn json-server` to create test json api `http://localhost:3001/`
 
 ---
@@ -23,7 +23,8 @@ Node server boilerplate is to help you kick start your node server.
 4. [nodemon](https://github.com/remy/nodemon) to restart server on any file change during development
 5. [mongoose](https://github.com/Automattic/mongoose) is a MongoDB object modeling tool designed to work in an asynchronous environment.
 6. [eslint](https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb-base) the project contains eslint with `eslint-config-airbnb-base` extended, to fix and flag javascript code errors.
-7. [husky](https://github.com/typicode/husky) to add `pre-commit` hook that will trigger `yarn lint` to make sure no bad commits are pushed
+7. [flow](https://flow.org/en/) static type checker for javascript
+8. [husky](https://github.com/typicode/husky) to add `pre-commit` hook that will trigger `yarn lint` && `yarn flow` to make sure no bad commits are pushed
 
 
 
