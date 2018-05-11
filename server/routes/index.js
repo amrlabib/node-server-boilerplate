@@ -1,5 +1,7 @@
+// @flow
+
 const MoviesRoutes = require('./movies');
 
-module.exports = function routes(app) {
+module.exports = function routes(app: Object) {
   MoviesRoutes(app);
 };

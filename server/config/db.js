@@ -1,3 +1,5 @@
+// @flow
+
 const config = require('./index.js');
 const mongoose = require('mongoose');
 
