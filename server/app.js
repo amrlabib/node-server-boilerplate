@@ -19,6 +19,7 @@ function setDefaultResponseHeaders(res) {
   }
 }
 
+
 app.use((req, res, next) => {
   setDefaultResponseHeaders(res);
 

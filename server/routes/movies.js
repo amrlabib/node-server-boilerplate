@@ -1,8 +1,10 @@
+// @flow
+
 const Request = require('../services/request');
 const Movies = require('../controllers/movies');
 const apiUrl = require('../config').api;
 
-module.exports = function MoviesRoutes(app) {
+module.exports = function MoviesRoutes(app: Object) {
   // Get all Movies
   app.get(`${apiUrl}/movies`, (req, res) => {
     const { query } = req;

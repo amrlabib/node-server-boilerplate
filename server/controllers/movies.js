@@ -1,3 +1,5 @@
+// @flow
+
 const Request = require('../services/request');
 const Movie = require('../models/movie.js');
 const awaitHandler = require('../services/awaitHandler');
@@ -5,7 +7,7 @@ const awaitHandler = require('../services/awaitHandler');
 const MOVIES_API = 'http://localhost:3001/movies';
 
 class Movies {
-  static async all(query) {
+  static async all(query: Object) {
     const url = MOVIES_API;
     let result = await Request.get(url);
 
@@ -17,14 +19,14 @@ class Movies {
     return result;
   }
 
-  static async one(id) {
+  static async one(id: string) {
     const url = `${MOVIES_API}/${id}`;
     const result = await Request.get(url);
 
     return result;
   }
 
-  static async add(data) {
+  static async add(data: Object) {
     const url = `${MOVIES_API}`;
     const postMovie = await awaitHandler(Request.post(url, data));
     if (postMovie.err) {
@@ -41,14 +43,14 @@ class Movies {
     return addMovie.res;
   }
 
-  static async delete(id) {
+  static async delete(id: string) {
     const url = `${MOVIES_API}/${id}`;
     const result = await Request.delete(url);
 
     return result;
   }
 
-  static async update(id, data) {
+  static async update(id: string, data: Object) {
     const url = `${MOVIES_API}/${id}`;
     const result = await Request.put(url, data);
 
