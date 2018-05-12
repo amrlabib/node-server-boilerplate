@@ -9,7 +9,8 @@ Node server boilerplate is to help you kick start your node server.
 ## Setup:
 
 1. `yarn` or `npm install`
-3. `yarn start` to start server 
+2. `yarn build` to remove flow type annotations
+3. `yarn start` to start server and watch files changes
 4. `yarn json-server` to create test json api `http://localhost:3001/`
 
 ---
