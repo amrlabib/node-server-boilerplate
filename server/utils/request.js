@@ -37,7 +37,8 @@ class Request {
             responseError.message = errMessage;
           }
         } else if (error.request) {
-          // console.log(error.request);
+          responseError.code = 404;
+          responseError.message = 'Not Found!';
         } else if (error.message) {
           responseError.message = error.message;
         }
