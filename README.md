@@ -6,12 +6,17 @@ Node server boilerplate is to help you kick start your node server.
 * [yarn](https://yarnpkg.com/en/) or [npm](https://www.npmjs.com/)
 * [Node.js](https://nodejs.org/en/)
 
+---
+
 ## Setup:
 
 1. `yarn` or `npm install`
 2. `yarn build` to remove flow type annotations
 3. `yarn start:dev` to start server and watch files changes
-4. `yarn json-server` to create test json api `http://localhost:3001/`
+
+#### Other scripts:
+
+1. `yarn json-server` to create test json api `http://localhost:3001/`
 
 ---
 
