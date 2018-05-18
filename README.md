@@ -10,12 +10,12 @@ Node server boilerplate is to help you kick start your node server.
 
 1. `yarn` or `npm install`
 2. `yarn build` to remove flow type annotations
-3. `yarn start` to start server and watch files changes
+3. `yarn start:dev` to start server and watch files changes
 4. `yarn json-server` to create test json api `http://localhost:3001/`
 
 ---
 
-## Features: 
+## Features:
 
 1. [axios](https://github.com/axios/axios) to handle all third party api calls if required `['GET','POST','PUT','DELETE', ...]`
 2. [express](https://expressjs.com/) web application framework
@@ -35,5 +35,3 @@ You can use any prefered editor, in case you are using [Atom](https://atom.io/) 
 * [react](https://atom.io/packages/react)
 * [linter-eslint](https://atom.io/packages/linter-eslint)
 * [flow-ide](https://atom.io/packages/flow-ide)
-
-
