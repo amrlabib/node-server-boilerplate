@@ -1,8 +1,8 @@
 // @flow
 
-const Request = require('../services/request');
+const Request = require('../utils/request');
 const Movie = require('../models/movie.js');
-const awaitHandler = require('../services/awaitHandler');
+const awaitHandler = require('../utils/awaitHandler');
 
 const MOVIES_API = 'http://localhost:3001/movies';
 

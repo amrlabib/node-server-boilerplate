@@ -1,6 +1,6 @@
 // @flow
 
-const Request = require('../services/request');
+const Request = require('../utils/request');
 const Movies = require('../controllers/movies');
 const apiUrl = require('../config').api;
 

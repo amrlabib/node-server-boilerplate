@@ -8,7 +8,7 @@
     "build:watch": "chokidar 'server/**/*.js' -c 'yarn run build'",
     "server": "node index.js",
     "server:watch": "DEBUG=server node_modules/.bin/nodemon index.js --ignore test-db.json",
-    "start": "concurrently \"yarn build:watch\" \"yarn server:watch\"",
+    "start:dev": "concurrently \"yarn build:watch\" \"yarn server:watch\"",
     "json-server": "json-server --watch test-db.json --port 3001",
     "lint": "node_modules/.bin/eslint ./server --fix",
     "test": "echo \"Error: no test specified\" && exit 1"

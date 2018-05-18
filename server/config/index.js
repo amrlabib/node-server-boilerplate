@@ -1,7 +1,7 @@
 // @flow
 
 module.exports = {
-  port: 3000,
+  port: 8080,
   api: '/api/v1',
   db: {
     mongo: 'mongodb://admin:1234@ds125126.mlab.com:25126/node-server-test',
