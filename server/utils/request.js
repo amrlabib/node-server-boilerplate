@@ -72,7 +72,8 @@ class Request {
     if (error) {
       finalResponse.status = 'error';
       finalResponse.message = error.message;
-      res.status(error.code || 500).send(finalResponse);
+      const isValidErrorCode = error.code >= 100 && error.code <= 599;
+      res.status(isValidErrorCode ? error.code : 500).send(finalResponse);
     } else {
       Log.success(finalResponse);
       res.send(finalResponse);
