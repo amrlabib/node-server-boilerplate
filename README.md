@@ -20,6 +20,15 @@ Node server boilerplate is to help you kick start your node server.
 
 ---
 
+
+## Setup using Docker
+
+1. `docker build -t node-boilerplace-image .` to build a docker image
+2. `docker run -p 80:8080 --name node-boilerplace-container node-boilerplace-image` to run the container
+
+
+---
+
 ## Features:
 
 1. [axios](https://github.com/axios/axios) to handle all third party api calls if required `['GET','POST','PUT','DELETE', ...]`
