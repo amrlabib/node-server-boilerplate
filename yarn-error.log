@@ -1,14 +1,14 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/Cellar/yarn/1.3.2/libexec/bin/yarn.js start
+  /usr/local/bin/node /usr/local/Cellar/yarn/1.5.1_1/libexec/bin/yarn.js
 
 PATH: 
-  ~/.rvm/scripts/rvm:~/Library/Python/3.4/bin:/Users/amrhamdy/.bin:/Users/amrhamdy/.bin/ant:/Users/amrhamdy/Development/applecom/us/trunk/us/internal/bin/utilities:/opt/subversion/bin:/usr/X11/lib:/opt/local/bin:/usr/local/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/amrhamdy/Library/Android/sdk/tools:/Users/amrhamdy/Library/Android/sdk/platform-tools
+  /Library/Frameworks/Python.framework/Versions/3.7/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Library/Frameworks/Python.framework/Versions/3.7/bin:/Library/Frameworks/Python.framework/Versions/3.8/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/amaly/Library/Android/sdk/tools:/Users/amaly/Library/Android/sdk/platform-tools:/Users/amaly/.local/bin:/Users/amaly/Library/Python/3.7/bin:/usr/local/mysql/bin
 
 Yarn version: 
-  1.3.2
+  1.5.1
 
 Node version: 
-  8.9.4
+  10.15.1
 
 Platform: 
   darwin x64
@@ -24,14 +24,14 @@ npm manifest:
       "build:watch": "chokidar 'server/**/*.js' -c 'yarn run build'",
       "server": "node index.js",
       "server:watch": "DEBUG=server node_modules/.bin/nodemon index.js --ignore test-db.json",
-      "start": "concurrently \"yarn build:watch\" \"yarn server:watch\"",
+      "start:dev": "concurrently \"yarn build:watch\" \"yarn server:watch\"",
       "json-server": "json-server --watch test-db.json --port 3001",
       "lint": "node_modules/.bin/eslint ./server --fix",
       "test": "echo \"Error: no test specified\" && exit 1"
     },
     "husky": {
       "hooks": {
-        "pre-commit": "yarn lint"
+        "pre-commit": "yarn lint && yarn flow"
       }
     },
     "keywords": [
@@ -69,6 +69,7 @@ npm manifest:
       "ignore": [
         "node_modules/*"
       ],
+      "delay": "500"
     }
   }
 
@@ -3962,10 +3963,11 @@ Lockfile:
       y18n "^3.2.0"
 
 Trace: 
-  SyntaxError: /Users/amrhamdy/Desktop/github_projects/node-server-boilerplate/node-server-boilerplate/package.json: Unexpected token } in JSON at position 1521
-      at JSON.parse (<anonymous>)
-      at /usr/local/Cellar/yarn/1.3.2/libexec/lib/cli.js:770:59
+  Error: Found incompatible module
+      at new MessageError (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:186:110)
+      at checkOne (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:62444:11)
+      at Object.check (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:62463:5)
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:22803:73
       at Generator.next (<anonymous>)
-      at step (/usr/local/Cellar/yarn/1.3.2/libexec/lib/cli.js:92:30)
-      at /usr/local/Cellar/yarn/1.3.2/libexec/lib/cli.js:103:13
-      at <anonymous>
+      at step (/usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:98:30)
+      at /usr/local/Cellar/yarn/1.5.1_1/libexec/lib/cli.js:109:13
