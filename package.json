@@ -32,7 +32,7 @@
     "body-parser": "^1.18.2",
     "chalk": "^2.3.2",
     "debug": "^3.1.0",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "json-server": "^0.12.1",
     "mongoose": "^5.0.9"
   },
